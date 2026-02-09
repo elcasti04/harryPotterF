@@ -258,7 +258,7 @@
   router();
 
 function inferDefaultApi() {
-  return 'https://harrypotterb.onrender.com';
+  return 'https://harrypotterb.onrender.com/pelis';
 }
 
 })();
