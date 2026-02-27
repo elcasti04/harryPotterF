@@ -1,20 +1,19 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/home";
-import Saga from "./pages/saga";
-import type { Movie } from './path/to/types';
-import './App.css'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/home';
+import Saga from './pages/saga';
+import Movie from './pages/movie';  // Importa el componente, no el tipo
+import './App.css';
 
 function App() {
-
   return (
-      <BrowserRouter>
+    <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} /> 
+        <Route path="/" element={<Home />} />
         <Route path="/saga/:name" element={<Saga />} />
-        <Route path="/movie/:id" element={<Movie />} />
+        <Route path="/movie/:id" element={<Movie />} /> {/* Aquí Movie es un componente React */}
       </Routes>
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;
