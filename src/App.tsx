@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/home";
 import Saga from "./pages/saga";
-import Movie from "./pages/movie";
+import type { Movie } from './path/to/types';
 import './App.css'
 
 function App() {
