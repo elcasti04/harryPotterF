@@ -1,6 +1,6 @@
 import type { MovieType } from "../types/movie";
 
-const API_URL = "http://localhost:3000/pelis";
+const API_URL = "https://harrypotterb.onrender.com/pelis";
 
 export async function getMovies(): Promise<MovieType[]> {
   const res = await fetch(API_URL);
