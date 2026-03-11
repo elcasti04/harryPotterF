@@ -59,44 +59,41 @@
   --transition-slow: 0.5s ease-in-out;
 }
 
-/* Prepara el body: fondo oscuro y posicionamiento */
+
 body {
   font-family: var(--font-family);
-  color: var(--text-secondary); /* Asegúrate de que este color de texto sea claro */
+  color: var(--text-secondary); 
   line-height: 1.6;
   min-height: 100vh;
   overflow-x: hidden;
-  position: relative; /* CRÍTICO: Para posicionar el pseudo-elemento */
+  position: relative; 
   
-  /* --- Fondo Base Oscuro --- */
-  background-color: #121212; /* Un gris muy oscuro (puedes usar #000 para negro puro) */
+  background-color: #121212; 
   
-  z-index: 1; /* Asegura que el contenido esté por encima del fondo */
+  z-index: 1; 
 }
 
-/* Pseudo-elemento para el fondo de marca de agua sutil */
+
 body::before {
-  content: ""; /* Obligatorio */
-  position: fixed; /* Mantiene el fondo fijo */
+  content: "";
+  position: fixed; 
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   
-  /* --- Configuración de la Imagen --- */
-  background-image: url('./assets/img/logo.png'); /* Ruta a tu logo */
-  background-repeat: no-repeat;  /* TU PETICIÓN: Que no salga varias veces */
-  background-position: center;    /* TU PETICIÓN: Una sola vez en el centro */
   
-  /* Escala la imagen. Puedes usar un tamaño fijo (ej: '300px') o 'contain' */
+  background-image: url('./assets/img/logo.png'); 
+  background-repeat: no-repeat;  
+  background-position: center;    
+  
+  
   background-size: contain; 
   
-  /* --- Configuración de la Opacidad y Posición --- */
-  opacity: 0.03; /* TU PETICIÓN: MUY baja opacidad (3%) para un efecto sutil sobre fondo oscuro */
-  z-index: -1;  /* CRÍTICO: Envía la imagen detrás del contenido del body */
   
-  /* Opcional: Para logos con colores brillantes que quieras "oscurecer" más */
-  /* filter: brightness(0.5); */ 
+  opacity: 0.03; 
+  z-index: -1;  
+  
 }
 
 /* Typography */
