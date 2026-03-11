@@ -6,20 +6,25 @@
 }
 
 :root {
-  /* Color palette */
-  --primary-color: #1a1a2e;
-  --secondary-color: #16213e;
-  --accent-color: #0f3460;
-  --text-primary: #e94560;
-  --text-secondary: #ffee01;
-  --text-muted: #a0a0a0;
-  --background-primary: #0f0f23;
-  --background-secondary: #1a1a2e;
-  --background-card: #16213e;
-  --border-color: #0f3460;
-  --hover-color: #e94560;
-  --success-color: #4caf50;
-  --error-color: #f44336;
+  /* Netflix Color palette */
+  --primary-color: #141414;
+  --secondary-color: #181818;
+  --accent-color: #e50914;
+
+  --text-primary: #e50914;
+  --text-secondary: #ffffff;
+  --text-muted: #b3b3b3;
+
+  --background-primary: #141414;
+  --background-secondary: #181818;
+  --background-card: #1f1f1f;
+
+  --border-color: #2a2a2a;
+
+  --hover-color: #f40612;
+
+  --success-color: #46d369;
+  --error-color: #e50914;
 
   /* Typography */
   --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -42,11 +47,11 @@
   --border-radius-md: 0.5rem;
   --border-radius-lg: 1rem;
 
-  /* Shadows */
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07), 0 1px 3px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
-  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04);
+  /* Shadows (más oscuras estilo Netflix) */
+  --shadow-sm: 0 2px 6px rgba(0,0,0,0.5);
+  --shadow-md: 0 5px 15px rgba(0,0,0,0.6);
+  --shadow-lg: 0 10px 30px rgba(0,0,0,0.7);
+  --shadow-xl: 0 20px 40px rgba(0,0,0,0.8);
 
   /* Transitions */
   --transition-fast: 0.15s ease-in-out;
@@ -54,13 +59,44 @@
   --transition-slow: 0.5s ease-in-out;
 }
 
+/* Prepara el body: fondo oscuro y posicionamiento */
 body {
   font-family: var(--font-family);
-  background: linear-gradient(135deg, var(--background-primary) 0%, var(--background-secondary) 100%);
-  color: var(--text-secondary);
+  color: var(--text-secondary); /* Asegúrate de que este color de texto sea claro */
   line-height: 1.6;
   min-height: 100vh;
   overflow-x: hidden;
+  position: relative; /* CRÍTICO: Para posicionar el pseudo-elemento */
+  
+  /* --- Fondo Base Oscuro --- */
+  background-color: #121212; /* Un gris muy oscuro (puedes usar #000 para negro puro) */
+  
+  z-index: 1; /* Asegura que el contenido esté por encima del fondo */
+}
+
+/* Pseudo-elemento para el fondo de marca de agua sutil */
+body::before {
+  content: ""; /* Obligatorio */
+  position: fixed; /* Mantiene el fondo fijo */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  /* --- Configuración de la Imagen --- */
+  background-image: url('./assets/img/logo.png'); /* Ruta a tu logo */
+  background-repeat: no-repeat;  /* TU PETICIÓN: Que no salga varias veces */
+  background-position: center;    /* TU PETICIÓN: Una sola vez en el centro */
+  
+  /* Escala la imagen. Puedes usar un tamaño fijo (ej: '300px') o 'contain' */
+  background-size: contain; 
+  
+  /* --- Configuración de la Opacidad y Posición --- */
+  opacity: 0.03; /* TU PETICIÓN: MUY baja opacidad (3%) para un efecto sutil sobre fondo oscuro */
+  z-index: -1;  /* CRÍTICO: Envía la imagen detrás del contenido del body */
+  
+  /* Opcional: Para logos con colores brillantes que quieras "oscurecer" más */
+  /* filter: brightness(0.5); */ 
 }
 
 /* Typography */
