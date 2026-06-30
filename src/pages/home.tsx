@@ -1,28 +1,26 @@
 import { useNavigate } from "react-router-dom";
+import './home.css'
 
 function Home() {
   const navigate = useNavigate();
 
   return (
-    <div className="container">
+    <div className="container-fluid">
       <div className="hero">
         <h1>¿Qué vamos a ver hoy?</h1>
-        <p>Explora nuestro catálogo de películas y disfruta de tus sagas favoritas</p>
       </div>
 
-      <div className="grid grid-2 flex-center" style={{ gap: "40px" }}>
+      <div className="contenedor-card">
         <div 
           className="movie-card" 
-          onClick={() => navigate("/saga/harry-potter")}
-          style={{ maxWidth: "250px", height:'600px' }}
-        >
+          onClick={() => navigate("/saga/harry-potter")}>
           <img 
-            src="/img/HarryPotter.jfif" 
+            src="img/HarryPotter.jfif" 
             alt="Harry Potter" 
           />
           <div className="content">
             <h4>Harry Potter</h4>
-            <p style={{ fontSize: "14px", color: "#a0a0a0" }}>
+            <p>
               La magia espera...
             </p>
           </div>
@@ -30,16 +28,14 @@ function Home() {
 
         <div 
           className="movie-card" 
-          onClick={() => navigate("/saga/crepusculo")}
-          style={{ maxWidth: "250px", height:'600px' }}
-        >
+          onClick={() => navigate("/saga/crepusculo")}>
           <img 
-            src="/img/crepusculo.webp" 
+            src="img/crepusculo.jfif" 
             alt="Crepúsculo" 
           />
           <div className="content">
             <h4>Crepúsculo</h4>
-            <p style={{ fontSize: "14px", color: "#a0a0a0" }}>
+            <p>
               Amor eterno...
             </p>
           </div>

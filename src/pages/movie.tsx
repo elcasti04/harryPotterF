@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getMovieById } from '../service/api';
 import type { MovieType } from '../types/movie';
+import './movie.css'
 
 function Movie() {
 	const { id } = useParams();
@@ -40,7 +41,7 @@ function Movie() {
 
 	if (error || !movie) {
 		return (
-			<div className="container">
+			<div className="container-fluid">
 				<button onClick={() => navigate('/')} className="btn">
 					← Volver
 				</button>
@@ -50,33 +51,31 @@ function Movie() {
 	}
 
 	return (
-		<div className="container">
-			<button
-				onClick={() => navigate(-1)}
-				className="btn"
-				style={{ marginBottom: '20px' }}
-			>
-				← Volver
-			</button>
+		<div className="container d-flex">
 
-			{/* Movie details with background image */}
-			<div
-				className="movie-details"
-				style={{ backgroundImage: `url(${movie.image})` }}
-			>
-				<h1>{movie.name}</h1>
 
-				<div className="movie-info">
+			<div className='col'>
+				<div className='col-3'>
+					<img src={movie.image} alt={movie.name} />
+				</div>
+
+				<div className='col-6'>
+					
+					<h1>{movie.name}</h1>
+					<div className="movie-info">
+
 					<div className="info-section">
+
 						<h3>Sinopsis</h3>
-						<p>{movie.info}</p>
+
+						<h4>{movie.info}</h4>
+
 					</div>
 
 					<div className="info-section">
 						<h3>Saga</h3>
-						<p>{movie.saga}</p>
+						<h2>{movie.saga}</h2>
 					</div>
-				</div>
 
 				<div className="movie-actions">
 					<a
@@ -84,12 +83,13 @@ function Movie() {
 						target="_self"
 						rel="noopener noreferrer"
 						className="btn btn-primary"
-						style={{ marginTop: '20px' }}
-					>
-						Ver Ahora
-					</a>
+						style={{ marginTop: '20px' }}>
+						Ver Ahora </a>
+				</div>
 				</div>
 			</div>
+		</div>
+										
 		</div>
 	);
 }

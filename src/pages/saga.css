@@ -1,0 +1,83 @@
+
+.movie-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.movie-card-saga {
+    border: 2px solid rgb(255, 2, 2);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform .3s ease, box-shadow .3s ease;
+    overflow: hidden;
+    border-radius: 12px;
+    width: 300px;
+}
+.movie-card-saga:hover {
+    transform: translateY(-8px) scale(1.03);
+     box-shadow: 0 12px 30px rgba(0, 0, 0, .35);
+}
+
+.movie-card-saga img {
+    border-radius: 12px 12px 0px 0px;
+    width: 100%;
+    height: 300px;
+    display: block;
+    transition: transform .4s ease;
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+    .movie-grid {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 25px;
+    }
+
+    .movie-card-saga {
+        width: 260px;
+    }
+
+    .movie-card-saga:hover {
+        transform: translateY(-6px) scale(1.02);
+    }
+
+    .movie-card-saga img {
+        height: 260px;
+    }
+}
+
+/* Celulares */
+@media (max-width: 768px) {
+    .movie-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .movie-card-saga {
+        width: 90%;
+        max-width: 320px;
+    }
+
+    .movie-card-saga img {
+        height: auto;
+    }
+
+    .movie-card-saga:hover {
+        transform: scale(1.02);
+    }
+}
+
+/* Celulares pequeños */
+@media (max-width: 480px) {
+    .movie-card-saga {
+        width: 95%;
+    }
+
+    .movie-card-saga img {
+        height: auto;
+    }
+}
+

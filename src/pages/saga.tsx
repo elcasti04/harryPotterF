@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getMoviesBySaga } from '../service/api';
 import type { MovieType } from '../types/movie';
+import './saga.css'
 
 function Saga() {
 	const { name } = useParams();
@@ -33,14 +34,7 @@ function Saga() {
 				: name;
 
 	return (
-		<div className="container">
-			<button
-				onClick={() => navigate('/')}
-				className="btn"
-				style={{ marginBottom: '20px', marginTop: '20px' }}
-			>
-				← Volver
-			</button>
+		<div className="container-fluid">
 
 			<div className="hero" style={{ marginBottom: '40px' }}>
 				<h2>Películas de {sagaName}</h2>
@@ -61,7 +55,7 @@ function Saga() {
 				{movies.map((movie) => (
 					<div
 						key={movie.id}
-						className="movie-card"
+						className="movie-card-saga"
 						onClick={() => navigate(`/movie/${movie.id}`)}
 					>
 						<img src={movie.image} alt={movie.name} />
