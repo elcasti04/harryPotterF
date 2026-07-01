@@ -13,6 +13,7 @@
     transition: transform .3s ease, box-shadow .3s ease;
     overflow: hidden;
     border-radius: 12px;
+    max-width: 300px;
     min-width: 300px;
 }
 .movie-card-saga:hover {
