@@ -3,6 +3,7 @@
     display: flex;
     justify-content: space-around;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .movie-card-saga {
@@ -12,7 +13,7 @@
     transition: transform .3s ease, box-shadow .3s ease;
     overflow: hidden;
     border-radius: 12px;
-    width: 300px;
+    min-width: 300px;
 }
 .movie-card-saga:hover {
     transform: translateY(-8px) scale(1.03);
